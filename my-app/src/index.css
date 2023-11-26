@@ -65,6 +65,10 @@ body {
   cursor: pointer;
 }
 
+.underlined:hover {
+  text-decoration: underline;
+}
+
 ._btn-icon:hover svg {
   fill: transparent;
   stroke: #acacac;
@@ -304,10 +308,29 @@ body {
   border: 1px solid #ffffff;
   border-radius: 60px;
   padding: 6px 20px;
+  margin-right: 10px;
 }
 
-.filter__button:not(:last-child) {
+/* .filter__button:not(:last-child) {
   margin-right: 10px;
+} */
+
+.filter__menu {
+  height: 305px;
+  width: 248px;
+  border-radius: 12px;
+  background-color: #4b4949;
+  padding: 34px;
+  margin-top: 10px;
+  position: absolute;
+}
+
+.filter__menu-text {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  padding-bottom: 28px;
 }
 
 .content__title {
