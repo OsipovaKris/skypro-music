@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
+import ContentLoader from "react-content-loader";
 
 export function AudioPlayer() {
   const [isLoading, setIsLoading] = useState(true);
@@ -9,6 +9,18 @@ export function AudioPlayer() {
       setIsLoading(false);
     }, 5000);
   }, []);
+
+  const MyLoader = () => (
+    <ContentLoader
+      height={18}
+      width={60}
+      speed={5}
+      backgroundColor="#313131"
+      foregroundColor="#181818"
+    >
+      <rect x="0" y="0" width="100%" height="100%" />
+    </ContentLoader>
+  );
 
   return (
     <div className="bar">
@@ -48,7 +60,15 @@ export function AudioPlayer() {
               <div className="track-play__contain">
                 <div className="track-play__image">
                   {isLoading ? (
-                    <Skeleton />
+                    <ContentLoader
+                      height={51}
+                      width={51}
+                      speed={3}
+                      backgroundColor="#313131"
+                      foregroundColor="#181818"
+                    >
+                      <rect x="0" y="0" width="100%" height="100%" />
+                    </ContentLoader>
                   ) : (
                     <svg className="track-play__svg" alt="music">
                       <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
@@ -57,7 +77,7 @@ export function AudioPlayer() {
                 </div>
                 <div className="track-play__author">
                   {isLoading ? (
-                    <Skeleton />
+                    <MyLoader />
                   ) : (
                     <a className="track-play__author-link" href="http://">
                       Ты та...
@@ -66,7 +86,7 @@ export function AudioPlayer() {
                 </div>
                 <div className="track-play__album">
                   {isLoading ? (
-                    <Skeleton />
+                    <MyLoader />
                   ) : (
                     <a className="track-play__album-link" href="http://">
                       Баста

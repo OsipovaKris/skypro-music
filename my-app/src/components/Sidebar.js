@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
+import ContentLoader from "react-content-loader";
 
 export function Sidebar() {
   const [isLoading, setIsLoading] = useState(true);
@@ -9,6 +9,17 @@ export function Sidebar() {
       setIsLoading(false);
     }, 5000);
   }, []);
+
+  const MyLoader = () => (
+    <ContentLoader
+      width={250}
+      speed={5}
+      backgroundColor="#313131"
+      foregroundColor="#181818"
+    >
+      <rect x="0" y="0" width="100%" height="100%" />
+    </ContentLoader>
+  );
 
   return (
     <div className="main__sidebar sidebar">
@@ -24,7 +35,7 @@ export function Sidebar() {
         <div className="sidebar__list">
           <div className="sidebar__item">
             {isLoading ? (
-              <Skeleton />
+              <MyLoader />
             ) : (
               <a className="sidebar__link" href="#">
                 <img
@@ -38,7 +49,7 @@ export function Sidebar() {
           <div className="sidebar__item">
             <a className="sidebar__link" href="#">
               {isLoading ? (
-                <Skeleton />
+                <MyLoader />
               ) : (
                 <img
                   className="sidebar__img"
@@ -51,7 +62,7 @@ export function Sidebar() {
           <div className="sidebar__item">
             <a className="sidebar__link" href="#">
               {isLoading ? (
-                <Skeleton />
+                <MyLoader />
               ) : (
                 <img
                   className="sidebar__img"
