@@ -311,6 +311,11 @@ body {
   margin-right: 10px;
 }
 
+.filter__button-active {
+  border-color: #9a48f1;
+  color: #9a48f1;
+}
+
 /* .filter__button:not(:last-child) {
   margin-right: 10px;
 } */

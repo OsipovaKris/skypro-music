@@ -11,12 +11,18 @@ export function Filter() {
     }
   };
 
+  const styleee = "filter__button _btn-text";
+
   return (
     <div className="centerblock__filter filter">
       <div className="filter__title">Искать по:</div>
       <div>
         <div
-          className="filter__button button-author _btn-text"
+          className={
+            visibleFilter === "author"
+              ? styleee + " filter__button-active"
+              : styleee
+          }
           onClick={() => toggleVisibility("author")}
         >
           исполнителю
@@ -31,7 +37,11 @@ export function Filter() {
       </div>
       <div>
         <div
-          className="filter__button button-year _btn-text"
+          className={
+            visibleFilter === "year"
+              ? styleee + " filter__button-active"
+              : styleee
+          }
           onClick={() => toggleVisibility("year")}
         >
           году выпуска
@@ -46,7 +56,11 @@ export function Filter() {
       </div>
       <div>
         <div
-          className="filter__button button-genre _btn-text"
+          className={
+            visibleFilter === "genre"
+              ? styleee + " filter__button-active"
+              : styleee
+          }
           onClick={() => toggleVisibility("genre")}
         >
           жанру

@@ -3,7 +3,7 @@ import { useState } from "react";
 export function NavMenu() {
   const [visible, setVisible] = useState(false);
 
-  const toggleVisibility = () => setVisible(!visible);
+  const toggleVisibility = () => setVisible((prev) => !prev);
 
   return (
     <nav className="main__nav nav">
